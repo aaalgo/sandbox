@@ -141,7 +141,10 @@ SANDBOX_HOME=`dirname "$SOURCE"`
 SANDBOX_NAME=`basename "$SANDBOX_HOME"`
 export SANDBOX_HOME
 export SANDBOX_NAME
-export PYTHONPATH=
+unset PYTHONPATH
+unset LD_LIBRARY_PATH
+unset CUDA_TOOLKIT_ROOT_DIR
+unset CUDA_HOME
 env | grep SANDBOX
 . "$SANDBOX_HOME/bin/activate"
 PS1="[$SANDBOX_NAME]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
